@@ -1,0 +1,9 @@
+<?php
+ob_start(); 
+session_start();
+include("menu.php");
+$accion=recoge1('accion');
+$_SESSION['sucursal']=$accion;
+header("location:sucursal1.php");
+ob_end_flush(); 
+?>

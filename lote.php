@@ -1,0 +1,337 @@
+<?php
+ob_start();
+session_start();
+include('menu.php');
+require_once ("config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
+require_once ("config/conexion.php");//Contiene funcion que conecta a la base de datos  	 
+$sql1="select * from users where user_id=$_SESSION[user_id]";
+$rw1=mysqli_query($con,$sql1);//recuperando el registro
+$rs1=mysqli_fetch_array($rw1);//trasformar el registro en un vector asociativo
+
+$modulo=$rs1["accesos"];
+$a = explode(".", $modulo); 
+        
+if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
+    header("location: login.php");
+	exit;
+    }
+
+ if($a[11]==0){
+   header("location:error.php");    
+}
+//$id_producto=11402;
+$id_producto=recoge1('id_producto');
+$_SESSION['id_producto']=$id_producto;
+$tienda=$_SESSION['tienda'];
+$sql2="select * from products where id_producto=$id_producto";
+$rw2=mysqli_query($con,$sql2);//recuperando el registro
+$rs2=mysqli_fetch_array($rw2);
+$cantidad=$rs2["b$tienda"];
+//trasformar el registro en un vector asociativo
+$_SESSION['cantidad']=$cantidad;
+
+
+$producto=recoge1('producto');
+?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <!-- Meta, title, CSS, favicons, etc. -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title> 
+ Lotes
+  
+  </title>
+
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="fonts/css/font-awesome.min.css" rel="stylesheet">
+<link href="css/custom.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/formularios.css"/>
+<script src="js/jquery.min.js"></script>
+  <link href="css/icheck/flat/green.css" rel="stylesheet">
+  <link href="css/datatables/tools/css/dataTables.tableTools.css" rel="stylesheet">
+ <link href="css/select/select2.min.css" rel="stylesheet"> 
+  
+<style>
+    table tr:nth-child(odd) {background-color: #FBF8EF;}
+
+table tr:nth-child(even) {background-color: #EFFBF5;}
+ #valor1 {
+              
+
+border-bottom: 2px solid #F5ECCE;
+
+}  
+
+#valor1:hover {
+              
+background-color: white;
+border-bottom: 2px solid #A9E2F3;
+
+} 
+
+.dt-button.red {
+        color: black;
+        
+        background:red;
+    }
+ 
+    .dt-button.orange {
+        color: black;
+        background:orange;
+    }
+ 
+    .dt-button.green {
+        color: black;
+        background:green;
+    }
+    
+    .dt-button.green1 {
+        color: black;
+        background:#01DFA5;
+    }
+    
+    .dt-button.green2 {
+        color: black;
+        background:#2E9AFE;
+    }
+</style>
+</head>
+<body class="nav-md">
+  <div class="container body">
+    <div class="main_container">     
+     
+        
+
+           <div class="container">
+	<div class="panel panel-info">
+		<div class="panel-heading">
+		    <div class="btn-group pull-right">
+				<button type='button' class="btn btn-info" data-toggle="modal" data-target="#nuevoPack"><span class="glyphicon glyphicon-plus" ></span>Agregar Lote</button>
+			</div>
+                    <h4>Producto:<font color="red"> <?php echo $producto;?></font> </h4>
+                        <h4>Stock: <?php echo round($cantidad,2);?> </h4>
+		</div>
+		<div class="panel-body">
+		
+			<?php
+                     
+			include("modal/registro_lote.php");
+			include("modal/editar_lote.php");
+                        
+			?>
+			<form style="color:black;" class="form-horizontal" role="form" id="datos_cotizacion">
+				
+						<div class="form-group row">
+							
+							<div class="col-md-44 col-sm-4 col-xs-12">
+                                                                Buscar Lote
+								<input type="text" class="form-control" id="q" placeholder="Buscar lote" onkeyup='load(1);'>
+							</div>
+                                                        <div class="col-md-2 col-sm-2 col-xs-12">
+                                                                <?php
+                                                                $fecha_actual = date("Y-m-d");
+ 
+                                                                //resto 1 día
+                                                                $fecha1= date("Y-m-d",strtotime($fecha_actual."- 4 days"));  
+                                                                ?>
+                                                                Fecha Vencimiento 1
+                                                                
+								<input type="date"  class="form-control" id="q2"  onchange='load(1);'>
+							</div>
+							<div class="col-md-2 col-sm-2 col-xs-12">
+                                                                Fecha Vencimiento 2
+								<input type="date"  class="form-control" id="q3"  onchange='load(1);'>
+							</div>
+                                                         <div class="col-md-2 col-sm-2 col-xs-12">
+                                                                Segun Stock
+								<select class="form-control" id="q4"  onchange='load(1);'>
+                                                                    <option value="">Elegir</option>
+                                                                    <option value="=0">Sin Stock</option>
+                                                                    <option value=">0">Con Stock</option>
+                                                                    <option value=">=0">Todo</option>
+                                                                </select>
+							</div>
+							<div class="col-md-2 col-sm-2 col-xs-12">
+								<button type="button" class="btn btn-warning" onclick='load(1);'>
+									<span class="glyphicon glyphicon-search" ></span> Buscar</button>
+								<span id="loader"></span>
+							</div>
+							
+						</div>
+				
+				
+				
+			</form>
+				<div id="resultados"></div><!-- Carga los datos ajax -->
+				<div class='outer_div'></div><!-- Carga los datos ajax -->
+			
+		
+	
+			
+			
+			
+  </div>
+</div>
+		 
+	</div>
+         
+
+          
+         
+        <!-- /footer content -->
+      </div>
+      <!-- /page content -->
+
+    </div>
+
+  </div>
+
+  <div id="custom_notifications" class="custom-notifications dsp_none">
+    <ul class="list-unstyled notifications clearfix" data-tabbed_notifications="notif-group">
+    </ul>
+    <div class="clearfix"></div>
+    <div id="notif-group" class="tabbed_notifications"></div>
+  </div>
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- bootstrap progress js -->
+  <script src="js/progressbar/bootstrap-progressbar.min.js"></script>
+  <script src="js/nicescroll/jquery.nicescroll.min.js"></script>
+  <!-- icheck -->
+  <script src="js/icheck/icheck.min.js"></script>
+
+  <script src="js/custom.js"></script>
+
+  <script src="js/pace/pace.min.js"></script>
+  
+ 
+  <script type="text/javascript" src="js/autocomplete/countries.js"></script>
+  <script src="js/autocomplete/jquery.autocomplete.js"></script>
+  <!-- pace -->
+  <script src="js/pace/pace.min.js"></script>
+  
+  
+  <script src="js/select/select2.full.js"></script>
+  
+<script>
+        $(document).ready(function(){
+			load(1);
+		});
+
+		function load(page){
+			var q= $("#q").val();
+                        var q2= $("#q2").val();
+                        var q3= $("#q3").val();
+                        var q4= $("#q4").val();
+			$("#loader").fadeIn('slow');
+			$.ajax({
+				url:'./ajax/buscar_lote.php?action=ajax&page='+page+'&q='+q+'&q2='+q2+'&q3='+q3+'&q4='+q4,
+				 beforeSend: function(objeto){
+				 $('#loader').html('<img src="./img/ajax-loader.gif"> Cargando...');
+			  },
+				success:function(data){
+					$(".outer_div").html(data).fadeIn('slow');
+					$('#loader').html('');
+					
+				}
+			})
+		}
+
+	
+		
+			function eliminar (id)
+		{
+			var q= $("#q").val();
+		if (confirm("Realmente deseas eliminar el lote")){	
+		$.ajax({
+        type: "GET",
+        url: "./ajax/buscar_lote.php",
+        data: "id="+id,"q":q,
+		 beforeSend: function(objeto){
+			$("#resultados").html("Mensaje: Cargando...");
+		  },
+        success: function(datos){
+		$("#resultados").html(datos);
+		load(1);
+		}
+			});
+		}
+		}
+		
+		
+	
+$( "#guardar_lote" ).submit(function( event ) {
+  $('#guardar_datos').attr("disabled", true);
+  
+ var parametros = $(this).serialize();
+	 $.ajax({
+			type: "POST",
+			url: "ajax/nuevo_lote.php",
+			data: parametros,
+			 beforeSend: function(objeto){
+				$("#resultados_ajax").html("Mensaje: Cargando...");
+			  },
+			success: function(datos){
+			$("#resultados_ajax").html(datos);
+			$('#guardar_datos').attr("disabled", false);
+			load(1);
+		  }
+	});
+  event.preventDefault();
+})
+
+$( "#editar_lote" ).submit(function( event ) {
+  $('#actualizar_datos').attr("disabled", true);
+  
+ var parametros = $(this).serialize();
+	 $.ajax({
+			type: "POST",
+			url: "ajax/editar_lote.php",
+			data: parametros,
+			 beforeSend: function(objeto){
+				$("#resultados_ajax2").html("Mensaje: Cargando...");
+			  },
+			success: function(datos){
+			$("#resultados_ajax2").html(datos);
+			$('#actualizar_datos').attr("disabled", false);
+			load(1);
+		  }
+	});
+  event.preventDefault();
+})
+
+	
+	function obtener_datos(id){
+			var lote = $("#lote"+id).val();
+                        var fec_vto = $("#fec_vto"+id).val();
+                        var fec_fab = $("#fec_fab"+id).val();
+                        var final = $("#final"+id).val();
+                        var id_producto = $("#id_producto"+id).val();
+                        $("#mod_lote").val(lote);
+                        $("#mod_fec_vto").val(fec_vto);
+                        $("#mod_fec_fab").val(fec_fab);
+                        $("#mod_final").val(final);
+                        $("#mod_cantidad").val(final);
+                        $("#mod_id_producto").val(id_producto);
+                        $("#mod_id").val(id);
+		
+		}
+        
+        
+        
+        
+        </script>
+</body>
+</html>
+<?php
+ob_end_flush();
+?>
+
+
+

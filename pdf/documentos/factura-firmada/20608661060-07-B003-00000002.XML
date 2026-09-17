@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:sac="urn:sunat:names:specification:ubl:peru:schema:xsd:SunatAggregateComponents-1" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <ext:UBLExtensions>
+        <ext:UBLExtension>
+            <ext:ExtensionContent>
+            <ds:Signature Id="SignatureSP"><ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/><ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/><ds:Reference URI=""><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/><ds:DigestValue>QCP6D0iB1eaIPLhK4Kivq/ZFPi4=</ds:DigestValue></ds:Reference></ds:SignedInfo><ds:SignatureValue>iWy3Kkq1fl93e6GD686naJwx26833hpS3kLnaWLHGoajjF785ujhhklvuh9Demn0vmEYGcPYW4MrZA6+2mDJb57kIsid6UntOfh+vFVGvuKF8+HxirMK9RzyAo84a4wEFe2dSLwxPm76ygPlgc0OSps0DF+GCf+kFkrwYQ/rzrPb6xqfsKeQHCsz4ikD1O37ldblUT6jwWt/Db7HpZriWMFC3we4DfnEUfjVuvezjN5+BDspWnMpNLlJfWNZH9T6LafzTlmpfGT2jyRpO6naKY/h7jSzhD7PEUnp5TXF/Hy/ae1kKMlffTEu8FoRX4NaAOnkysyVE/BVFb1PukmMYA==</ds:SignatureValue><ds:KeyInfo><ds:X509Data><ds:X509Certificate>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</ds:X509Certificate></ds:X509Data></ds:KeyInfo></ds:Signature></ext:ExtensionContent>
+        </ext:UBLExtension>
+    </ext:UBLExtensions>
+    <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+    <cbc:CustomizationID>2.0</cbc:CustomizationID>
+    <cbc:ID>B003-00000002</cbc:ID>
+    <cbc:IssueDate>2022-11-24</cbc:IssueDate>
+    <cbc:IssueTime>00:00:00</cbc:IssueTime>
+    <cbc:DocumentCurrencyCode>PEN</cbc:DocumentCurrencyCode>
+    <cac:DiscrepancyResponse>
+        <cbc:ReferenceID>B001-213</cbc:ReferenceID>
+        <cbc:ResponseCode>01</cbc:ResponseCode>
+        <cbc:Description><![CDATA[ANULACION DE LA OPERACION]]></cbc:Description>
+    </cac:DiscrepancyResponse>
+    <cac:BillingReference>
+        <cac:InvoiceDocumentReference>
+            <cbc:ID>B001-213</cbc:ID>
+            <cbc:DocumentTypeCode>03</cbc:DocumentTypeCode>
+        </cac:InvoiceDocumentReference>
+    </cac:BillingReference>
+    <cac:Signature>
+        <cbc:ID>IDSignST</cbc:ID>
+        <cac:SignatoryParty>
+            <cac:PartyIdentification>
+                <cbc:ID>20608661060</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name><![CDATA[BOTICA SV Y JN S.R.L]]></cbc:Name>
+            </cac:PartyName>
+        </cac:SignatoryParty>
+        <cac:DigitalSignatureAttachment>
+            <cac:ExternalReference>
+                <cbc:URI>#SignatureSP</cbc:URI>
+            </cac:ExternalReference>
+        </cac:DigitalSignatureAttachment>
+    </cac:Signature>
+    <cac:AccountingSupplierParty>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeID="6">20608661060</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyName>
+                <cbc:Name><![CDATA[BOTICA SV Y JN S.R.L]]></cbc:Name>
+            </cac:PartyName>
+            <cac:PartyLegalEntity>
+            <cbc:RegistrationName><![CDATA[BOTICA SV Y JN S.R.L]]></cbc:RegistrationName>
+                <cac:RegistrationAddress>
+                    <cbc:AddressTypeCode>0001</cbc:AddressTypeCode>
+                </cac:RegistrationAddress>
+            </cac:PartyLegalEntity>
+        </cac:Party>
+    </cac:AccountingSupplierParty>
+    <cac:AccountingCustomerParty>
+        <cac:Party>
+            <cac:PartyIdentification>
+                <cbc:ID schemeID="1">11111111</cbc:ID>
+            </cac:PartyIdentification>
+            <cac:PartyLegalEntity>
+            <cbc:RegistrationName><![CDATA[CLIENTES VARIOS]]></cbc:RegistrationName>
+            </cac:PartyLegalEntity>
+        </cac:Party>
+    </cac:AccountingCustomerParty><cac:TaxTotal>
+        <cbc:TaxAmount currencyID="PEN">2.75</cbc:TaxAmount>
+        <cac:TaxSubtotal>
+        <cbc:TaxableAmount currencyID="PEN">15.25</cbc:TaxableAmount>
+        <cbc:TaxAmount currencyID="PEN">2.75</cbc:TaxAmount>
+            <cac:TaxCategory>
+                <cac:TaxScheme>
+                    <cbc:ID schemeID="UN/ECE 5153" schemeAgencyID="6">1000</cbc:ID>
+                    <cbc:Name>IGV</cbc:Name>
+                    <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+                </cac:TaxScheme>
+            </cac:TaxCategory>
+        </cac:TaxSubtotal>
+    </cac:TaxTotal><cac:LegalMonetaryTotal>
+        <cbc:PayableAmount currencyID="PEN">18</cbc:PayableAmount>
+    </cac:LegalMonetaryTotal><cac:CreditNoteLine>
+        <cbc:ID>1</cbc:ID>
+<cbc:CreditedQuantity unitCode="NIU">1.00</cbc:CreditedQuantity>
+<cbc:LineExtensionAmount currencyID="PEN">15.25</cbc:LineExtensionAmount>
+        <cac:PricingReference>
+            <cac:AlternativeConditionPrice>
+<cbc:PriceAmount currencyID="PEN">18</cbc:PriceAmount>
+                <cbc:PriceTypeCode>01</cbc:PriceTypeCode>
+            </cac:AlternativeConditionPrice>
+        </cac:PricingReference><cac:TaxTotal>
+        <cbc:TaxAmount currencyID="PEN">2.75</cbc:TaxAmount>
+            <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="PEN">15.25</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="PEN">2.75</cbc:TaxAmount>
+                <cac:TaxCategory>
+                    <cbc:Percent>18</cbc:Percent>
+                    <cbc:TaxExemptionReasonCode>10</cbc:TaxExemptionReasonCode>
+                    <cac:TaxScheme>
+                        <cbc:ID>1000</cbc:ID>
+                        <cbc:Name>IGV</cbc:Name>
+                        <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+                    </cac:TaxScheme>
+                </cac:TaxCategory>
+            </cac:TaxSubtotal>
+        </cac:TaxTotal><cac:Item>
+        <cbc:Description><![CDATA[damicocyn 15mg TAB]]></cbc:Description>
+            <cac:SellersItemIdentification>
+                <cbc:ID><![CDATA[80]]></cbc:ID>
+            </cac:SellersItemIdentification>
+        </cac:Item>
+        <cac:Price>
+<cbc:PriceAmount currencyID="PEN">15.25</cbc:PriceAmount>
+        </cac:Price>
+    </cac:CreditNoteLine></CreditNote>

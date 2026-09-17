@@ -1,0 +1,9 @@
+<?php
+ob_start();
+session_start();
+include("menu.php");
+$accion=recoge1('accion');
+$_SESSION['id_producto']=$accion;
+header("location:fotos.php");
+ob_end_flush(); 
+?>
