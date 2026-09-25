@@ -10,9 +10,9 @@
 	<cbc:CustomizationID schemeAgencyName="PE:SUNAT">2.0</cbc:CustomizationID>
 	<cbc:ProfileID schemeName="Tipo de Operacion" schemeAgencyName="PE:SUNAT" schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo51"/>
 	<cbc:ID>B001-00001142</cbc:ID>
-	<cbc:IssueDate>2026-09-03</cbc:IssueDate>
+	<cbc:IssueDate>2026-09-17</cbc:IssueDate>
 	<cbc:IssueTime>00:00:00</cbc:IssueTime>
-	<cbc:DueDate>2026-09-03</cbc:DueDate>
+	<cbc:DueDate>2026-09-17</cbc:DueDate>
 	<cbc:InvoiceTypeCode listAgencyName="PE:SUNAT" listName="Tipo de Documento" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo01" listID="0101" name="Tipo de Operacion" listSchemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo51">03</cbc:InvoiceTypeCode><cbc:DocumentCurrencyCode listID="ISO 4217 Alpha" listName="Currency" listAgencyName="United Nations Economic Commission for Europe">PEN</cbc:DocumentCurrencyCode>
             <cbc:LineCountNumeric>2</cbc:LineCountNumeric><cac:Signature>
 		<cbc:ID>B001-00001142</cbc:ID>

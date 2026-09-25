@@ -9,13 +9,13 @@
 	<cbc:UBLVersionID>2.1</cbc:UBLVersionID>
 	<cbc:CustomizationID schemeAgencyName="PE:SUNAT">2.0</cbc:CustomizationID>
 	<cbc:ProfileID schemeName="Tipo de Operacion" schemeAgencyName="PE:SUNAT" schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo51"/>
-	<cbc:ID>B001-00001145</cbc:ID>
-	<cbc:IssueDate>2026-09-17</cbc:IssueDate>
+	<cbc:ID>B001-00001152</cbc:ID>
+	<cbc:IssueDate>2026-09-24</cbc:IssueDate>
 	<cbc:IssueTime>00:00:00</cbc:IssueTime>
-	<cbc:DueDate>2026-09-17</cbc:DueDate>
+	<cbc:DueDate>2026-09-24</cbc:DueDate>
 	<cbc:InvoiceTypeCode listAgencyName="PE:SUNAT" listName="Tipo de Documento" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo01" listID="0101" name="Tipo de Operacion" listSchemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo51">03</cbc:InvoiceTypeCode><cbc:DocumentCurrencyCode listID="ISO 4217 Alpha" listName="Currency" listAgencyName="United Nations Economic Commission for Europe">PEN</cbc:DocumentCurrencyCode>
             <cbc:LineCountNumeric>2</cbc:LineCountNumeric><cac:Signature>
-		<cbc:ID>B001-00001145</cbc:ID>
+		<cbc:ID>B001-00001152</cbc:ID>
 		<cac:SignatoryParty>
 			<cac:PartyIdentification>
 				<cbc:ID>20608661060</cbc:ID>
@@ -26,7 +26,7 @@
 		</cac:SignatoryParty>
 		<cac:DigitalSignatureAttachment>
 			<cac:ExternalReference>
-				<cbc:URI>#B001-00001145</cbc:URI>
+				<cbc:URI>#B001-00001152</cbc:URI>
 			</cac:ExternalReference>
 		</cac:DigitalSignatureAttachment>
 	</cac:Signature>
@@ -108,9 +108,9 @@
 		<cbc:BaseAmount currencyID="PEN">0.00</cbc:BaseAmount>
 	</cac:AllowanceCharge>
 	<cac:TaxTotal>
-		<cbc:TaxAmount currencyID="PEN">1.22</cbc:TaxAmount><cac:TaxSubtotal>
-			<cbc:TaxableAmount currencyID="PEN">6.78</cbc:TaxableAmount>
-			<cbc:TaxAmount currencyID="PEN">1.22</cbc:TaxAmount>
+		<cbc:TaxAmount currencyID="PEN">3.51</cbc:TaxAmount><cac:TaxSubtotal>
+			<cbc:TaxableAmount currencyID="PEN">19.49</cbc:TaxableAmount>
+			<cbc:TaxAmount currencyID="PEN">3.51</cbc:TaxAmount>
 			<cac:TaxCategory>
 				<cbc:ID schemeID="UN/ECE 5305" schemeName="Tax Category Identifier" schemeAgencyName="United Nations Economic Commission for Europe">S</cbc:ID>
 				<cac:TaxScheme>
@@ -121,18 +121,52 @@
 			</cac:TaxCategory>
 		</cac:TaxSubtotal></cac:TaxTotal>
 	<cac:LegalMonetaryTotal>
-		<cbc:LineExtensionAmount currencyID="PEN">6.78</cbc:LineExtensionAmount>
-		<cbc:TaxInclusiveAmount currencyID="PEN">8</cbc:TaxInclusiveAmount>
+		<cbc:LineExtensionAmount currencyID="PEN">19.49</cbc:LineExtensionAmount>
+		<cbc:TaxInclusiveAmount currencyID="PEN">23</cbc:TaxInclusiveAmount>
 		<cbc:AllowanceTotalAmount currencyID="PEN">0</cbc:AllowanceTotalAmount>
 		<cbc:ChargeTotalAmount currencyID="PEN">0.00</cbc:ChargeTotalAmount>
-		<cbc:PayableAmount currencyID="PEN">8</cbc:PayableAmount>
+		<cbc:PayableAmount currencyID="PEN">23</cbc:PayableAmount>
 	</cac:LegalMonetaryTotal><cac:InvoiceLine>
 		<cbc:ID>1</cbc:ID>
-		<cbc:InvoicedQuantity unitCode="NIU" unitCodeListID="UN/ECE rec 20" unitCodeListAgencyName="United Nations Economic Commission for Europe">2.00</cbc:InvoicedQuantity>
+		<cbc:InvoicedQuantity unitCode="NIU" unitCodeListID="UN/ECE rec 20" unitCodeListAgencyName="United Nations Economic Commission for Europe">1.00</cbc:InvoicedQuantity>
+		<cbc:LineExtensionAmount currencyID="PEN">18.64</cbc:LineExtensionAmount>
+		<cac:PricingReference>
+			<cac:AlternativeConditionPrice>
+				<cbc:PriceAmount currencyID="PEN">22</cbc:PriceAmount>
+				<cbc:PriceTypeCode listName="Tipo de Precio" listAgencyName="PE:SUNAT" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo16">01</cbc:PriceTypeCode>
+			</cac:AlternativeConditionPrice>
+		</cac:PricingReference><cac:TaxTotal>
+			<cbc:TaxAmount currencyID="PEN">3.36</cbc:TaxAmount>
+			<cac:TaxSubtotal>
+				<cbc:TaxableAmount currencyID="PEN">18.64</cbc:TaxableAmount>
+				<cbc:TaxAmount currencyID="PEN">3.36</cbc:TaxAmount>
+				<cac:TaxCategory>
+					<cbc:ID>S</cbc:ID>
+					<cbc:Percent>18</cbc:Percent>
+					<cbc:TaxExemptionReasonCode>10</cbc:TaxExemptionReasonCode>
+					<cac:TaxScheme>
+						<cbc:ID>1000</cbc:ID>
+						<cbc:Name>IGV</cbc:Name>
+						<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+					</cac:TaxScheme>
+				</cac:TaxCategory>
+			</cac:TaxSubtotal>
+		</cac:TaxTotal><cac:Item>
+			<cbc:Description><![CDATA[SOLOUNA 5 x 1 AMPOLLA 1 ML]]></cbc:Description>
+			<cac:SellersItemIdentification>
+				<cbc:ID><![CDATA[388]]></cbc:ID>
+			</cac:SellersItemIdentification>
+		</cac:Item>
+		<cac:Price>
+			<cbc:PriceAmount currencyID="PEN">18.64407</cbc:PriceAmount>
+		</cac:Price>
+	</cac:InvoiceLine><cac:InvoiceLine>
+		<cbc:ID>2</cbc:ID>
+		<cbc:InvoicedQuantity unitCode="NIU" unitCodeListID="UN/ECE rec 20" unitCodeListAgencyName="United Nations Economic Commission for Europe">1.00</cbc:InvoicedQuantity>
 		<cbc:LineExtensionAmount currencyID="PEN">0.85</cbc:LineExtensionAmount>
 		<cac:PricingReference>
 			<cac:AlternativeConditionPrice>
-				<cbc:PriceAmount currencyID="PEN">0.5</cbc:PriceAmount>
+				<cbc:PriceAmount currencyID="PEN">1</cbc:PriceAmount>
 				<cbc:PriceTypeCode listName="Tipo de Precio" listAgencyName="PE:SUNAT" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo16">01</cbc:PriceTypeCode>
 			</cac:AlternativeConditionPrice>
 		</cac:PricingReference><cac:TaxTotal>
@@ -152,46 +186,12 @@
 				</cac:TaxCategory>
 			</cac:TaxSubtotal>
 		</cac:TaxTotal><cac:Item>
-			<cbc:Description><![CDATA[omeprazol 20mg CAP LR]]></cbc:Description>
+			<cbc:Description><![CDATA[jeringa hipodermica esteril para un solo uso con aguja 21G x 1 12 10ml]]></cbc:Description>
 			<cac:SellersItemIdentification>
-				<cbc:ID><![CDATA[311]]></cbc:ID>
+				<cbc:ID><![CDATA[432]]></cbc:ID>
 			</cac:SellersItemIdentification>
 		</cac:Item>
 		<cac:Price>
-			<cbc:PriceAmount currencyID="PEN">0.42373</cbc:PriceAmount>
-		</cac:Price>
-	</cac:InvoiceLine><cac:InvoiceLine>
-		<cbc:ID>2</cbc:ID>
-		<cbc:InvoicedQuantity unitCode="NIU" unitCodeListID="UN/ECE rec 20" unitCodeListAgencyName="United Nations Economic Commission for Europe">2.00</cbc:InvoicedQuantity>
-		<cbc:LineExtensionAmount currencyID="PEN">5.93</cbc:LineExtensionAmount>
-		<cac:PricingReference>
-			<cac:AlternativeConditionPrice>
-				<cbc:PriceAmount currencyID="PEN">3.5</cbc:PriceAmount>
-				<cbc:PriceTypeCode listName="Tipo de Precio" listAgencyName="PE:SUNAT" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo16">01</cbc:PriceTypeCode>
-			</cac:AlternativeConditionPrice>
-		</cac:PricingReference><cac:TaxTotal>
-			<cbc:TaxAmount currencyID="PEN">1.07</cbc:TaxAmount>
-			<cac:TaxSubtotal>
-				<cbc:TaxableAmount currencyID="PEN">5.93</cbc:TaxableAmount>
-				<cbc:TaxAmount currencyID="PEN">1.07</cbc:TaxAmount>
-				<cac:TaxCategory>
-					<cbc:ID>S</cbc:ID>
-					<cbc:Percent>18</cbc:Percent>
-					<cbc:TaxExemptionReasonCode>10</cbc:TaxExemptionReasonCode>
-					<cac:TaxScheme>
-						<cbc:ID>1000</cbc:ID>
-						<cbc:Name>IGV</cbc:Name>
-						<cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
-					</cac:TaxScheme>
-				</cac:TaxCategory>
-			</cac:TaxSubtotal>
-		</cac:TaxTotal><cac:Item>
-			<cbc:Description><![CDATA[HEPABIONTA FORTE CAP]]></cbc:Description>
-			<cac:SellersItemIdentification>
-				<cbc:ID><![CDATA[1669]]></cbc:ID>
-			</cac:SellersItemIdentification>
-		</cac:Item>
-		<cac:Price>
-			<cbc:PriceAmount currencyID="PEN">2.9661</cbc:PriceAmount>
+			<cbc:PriceAmount currencyID="PEN">0.84746</cbc:PriceAmount>
 		</cac:Price>
 	</cac:InvoiceLine></Invoice>
